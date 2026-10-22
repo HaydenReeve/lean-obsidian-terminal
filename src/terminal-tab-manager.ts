@@ -965,7 +965,7 @@ export class TerminalTabManager {
     this.sessionCounter++;
     const id = `terminal-${this.sessionCounter}`;
     const name = opts?.name ?? `Terminal ${this.sessionCounter}`;
-    const sessionCwd = opts?.cwd ?? this.cwd;
+    const sessionCwd = opts?.cwd || this.cwd;
 
     const containerEl = this.terminalHostEl.createDiv({ cls: "terminal-session" });
     const { terminal, fitAddon, serializeAddon, searchAddon } = this.buildXterm(containerEl, opts);
